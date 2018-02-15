@@ -8,7 +8,7 @@ public class FakeClient {
     public void testKvClient() throws Throwable {
         KvClient kvClient = new KvClient();
         kvClient.initClient();
-        System.out.println(kvClient.getKv());
+        System.out.println(kvClient.getKv("test"));
     }
 
 }
