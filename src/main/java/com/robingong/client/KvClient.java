@@ -10,7 +10,7 @@ import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.HashMap;
+import java.util.Base64;
 import java.util.List;
 import java.util.Map;
 
@@ -31,12 +31,10 @@ public class KvClient {
         Request request = new Request.Builder().url(url).build();
         Response response = httpClient.newCall(request).execute();
         List<Map<String, String>> responseList = GsonHolder.instance.getGson().fromJson(response.body().string(), List.class);
-        return responseList.get(0).get("Value");
+        return new String(Base64.getDecoder().decode(responseList.get(0).get("Value")), "utf-8");
     }
-
     private URL buildUrl(String key) throws MalformedURLException {
-        URL url = new URL(ConfigContext.getProtocol(), ConfigContext.getAddress(), ConfigContext.getPort(), BASE_PATH + key);
-        return url;
+        return new URL(ConfigContext.getProtocol(), ConfigContext.getAddress(), ConfigContext.getPort(), BASE_PATH + key);
     }
 
 }
