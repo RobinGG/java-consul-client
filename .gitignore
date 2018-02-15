@@ -51,7 +51,7 @@ fabric.properties
 
 # I add this.
 .idea
-
+target
 
 ### Java template
 # Compiled class file
