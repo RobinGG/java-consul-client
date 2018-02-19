@@ -27,6 +27,7 @@
         <commons-configuration.version>2.2</commons-configuration.version>
         <juint.version>4.12</juint.version>
         <logback.version>1.2.3</logback.version>
+        <embedded-consul.version>1.0.2</embedded-consul.version>
     </properties>
 
     <dependencies>
@@ -77,6 +78,12 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>${juint.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.pszymczyk.consul</groupId>
+            <artifactId>embedded-consul</artifactId>
+            <version>${embedded-consul.version}</version>
             <scope>test</scope>
         </dependency>
 
