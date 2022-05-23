@@ -26,7 +26,7 @@
         <guava.version>29.0-jre</guava.version>
         <commons-configuration.version>2.7</commons-configuration.version>
         <juint.version>4.12</juint.version>
-        <logback.version>1.2.3</logback.version>
+        <logback.version>1.2.9</logback.version>
         <embedded-consul.version>1.0.2</embedded-consul.version>
     </properties>
 
